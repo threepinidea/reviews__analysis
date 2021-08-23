@@ -34,29 +34,29 @@ print(good[0])
 
 
 # 文字記數
-wc = {}
-for d in data:
-    words = d.split()
-    for word in words:
-        if word in wc:
-            wc[word] += 1
-        else:
-            wc[word] = 1
+wc = {} # 建立 變數wc它是一個字典
+for d in data: # 將每一個 d從 data中逐一取出
+    words = d.split() # words 等於 每一次 d遇到的空行切割出來
+    for word in words: # 將 word 從 words中逐一取出
+        if word in wc: # 如果 word 有再 wc 裡就
+            wc[word] += 1 # 將wc裡的 key值 +1
+        else: # 否則
+            wc[word] = 1 # 新增新的key進 wc字典
 
-for word in wc:
-    if wc[word] > 1000000:
-        print(word, wc[word])
+for word in wc: # 將 word 從 wc 裡逐一取出
+    if wc[word] > 1000000: # 如果 wc的key值 大於 一百萬
+        print(word, wc[word]) # 印出 key和 wc字典裡的值
 
-print(len(wc))
-print(wc['Allen'])
+print(len(wc)) # 印出 wc字典長度
+print(wc['Allen']) # 印出 wc字典 key'Allen'的值
 
 while True:
-    word = input('請輸入查詢字元: ')
-    if word == 'q':
-        break
-    if word in wc:
-        print(word, '出現的次數為', wc[word])
-    else:
-        print('這個字元沒有出現')
+    word = input('請輸入查詢字元: ') # 讓使用者輸入想查詢的字元 存到變數 word
+    if word == 'q': # 如果 word 等於 q
+        break # 強制停止
+    if word in wc: # 如果 word 再 wc字典裡
+        print(word, '出現的次數為', wc[word]) # 印出 key和wc字典出現的次數值
+    else: # 否則
+        print('這個字元沒有出現') # 印出這個字元沒有出現
 
-print('感謝使用查詢功能')
+print('感謝使用查詢功能') # 強制停止後 印出感謝使用查詢功能
